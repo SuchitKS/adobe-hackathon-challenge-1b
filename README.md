@@ -56,7 +56,7 @@
 1.  **Build the Docker Image**:
 
     ```bash
-    docker build --platform=linux/amd64 -t doc-intel-system .
+  docker build --platform=linux/amd64 -t pdf-outline-extractor .
     ```
 
 2.  **Prepare Directories and Input**:
@@ -68,13 +68,7 @@
     This command mounts your local directories into the container to process the files.
 
     ```bash
-    docker run --rm \
-      -v $(pwd)/input:/app/input \
-      -v $(pwd)/output:/app/output \
-      -v "$(pwd)/Collection 1":"/app/Collection 1" \
-      -v "$(pwd)/Collection 2":"/app/Collection 2" \
-      -v "$(pwd)/Collection 3":"/app/Collection 3" \
-      doc-intel-system
+  docker run --rm -v D:/Challenge_1b/Collection_1:/app/input -v D:/Challenge_1b/Collection_1:/app/output --network none pdf-outline-extractor
     ```
 
     **Note for Windows users**: Replace `$(pwd)` with the absolute path to your project directory (e.g., `D:/path/to/project`).
